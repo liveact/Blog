@@ -86,6 +86,13 @@ const socialImageURL = new URL(ogImage ? ogImage : config.socialCard, Astro.url)
 
 <meta content={Astro.generator} name='generator' />
 
+{/* Mermaid diagram rendering */}
+<script type='module'>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'
+  const isDark = document.documentElement.classList.contains('dark')
+  mermaid.initialize({ startOnLoad: true, theme: isDark ? 'dark' : 'default' })
+</script>
+
 {
   /* User script*/
   prod && (
