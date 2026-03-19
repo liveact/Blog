@@ -91,11 +91,18 @@ const socialImageURL = new URL(ogImage ? ogImage : config.socialCard, Astro.url)
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'
   mermaid.initialize({ startOnLoad: true, theme: 'default' })
 </script>
-<style>
+<style is:global>
+  .prose pre.mermaid,
   pre.mermaid {
-    background: #f8fafc;
+    background-color: #f8fafc !important;
+    color: #333 !important;
     border-radius: 0.5rem;
     padding: 1rem;
+    overflow-x: auto;
+  }
+  .dark .prose pre.mermaid,
+  .dark pre.mermaid {
+    background-color: #f1f5f9 !important;
   }
 </style>
 
