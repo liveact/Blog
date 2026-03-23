@@ -7,6 +7,7 @@ tags:
   - 架构设计
   - 高并发
 language: '中文'
+heroImage: { src: './thumbnail.jpg', color: '#9698C1' }
 ---
 
 ## 背景
