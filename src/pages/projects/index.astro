@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets'
 
-import { Icon } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
 import Sponsorship from '@/components/projects/Sponsorship.astro'
@@ -63,15 +62,14 @@ const headings = [
       title='点击进行 base64 转换'
       style='cursor:pointer;text-decoration:underline;'>eXVnYWxpLmx0dEBnbWFpbC5jb20=</code> 点击代码进行 base64 转换）。
   </p>
-  <script>
+  <script is:inline>
     document.querySelector('.email-b64')?.addEventListener('click', function () {
-      const el = this as HTMLElement
       try {
-        const decoded = atob(el.textContent?.trim() || '')
+        var decoded = atob(this.textContent?.trim() || '')
         if (decoded.includes('@')) {
           alert('邮箱：' + decoded)
         }
-      } catch {}
+      } catch (e) {}
     })
   </script>
 </PageLayout>
