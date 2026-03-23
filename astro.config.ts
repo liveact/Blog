@@ -7,6 +7,7 @@ import remarkMath from 'remark-math'
 
 // Local integrations
 import rehypeAutolinkHeadings from './src/plugins/rehype-auto-link-headings.ts'
+import rehypeMermaid from './src/plugins/rehype-mermaid.ts'
 // Shiki
 import {
   addCollapse,
@@ -54,6 +55,7 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
     rehypePlugins: [
       [rehypeKatex, {}],
+      rehypeMermaid,
       rehypeHeadingIds,
       [
         rehypeAutolinkHeadings,
@@ -65,6 +67,10 @@ export default defineConfig({
       ]
     ],
     // https://docs.astro.build/en/guides/syntax-highlighting/
+    syntaxHighlight: {
+      type: 'shiki',
+      excludeLangs: ['mermaid']
+    },
     shikiConfig: {
       themes: {
         light: 'github-light',
