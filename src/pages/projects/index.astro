@@ -3,13 +3,12 @@ import { Image } from 'astro:assets'
 
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
-import Sponsorship from '@/components/projects/Sponsorship.astro'
-import alipay from '@/assets/alipay-qrcode.jpg'
-import wechat from '@/assets/wechat-qrcode.jpg'
+// import Sponsorship from '@/components/projects/Sponsorship.astro'
+// import alipay from '@/assets/alipay-qrcode.jpg'
+// import wechat from '@/assets/wechat-qrcode.jpg'
 
 const headings = [
-  { depth: 2, slug: 'programs', text: 'Programs' },
-  { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
+  { depth: 2, slug: 'programs', text: 'Programs' }
 ]
 ---
 
@@ -46,7 +45,7 @@ const headings = [
     ]}
   />
 
-  <h2 id='sponsorship'>Sponsorship</h2>
+  {/* <h2 id='sponsorship'>Sponsorship</h2>
   <p>如果觉得内容对你有帮助，欢迎通过微信或支付宝赞助支持：</p>
   <Sponsorship
     methods={[
@@ -54,8 +53,6 @@ const headings = [
       { name: 'Alipay', icon: 'alipay', image: alipay }
     ]}
   />
-  {/* <p>Chinese methods: <a href="https://afdian.com/a/cworld" target="_blank">Afadian</a></p> */}
-  {/* <p>Global methods: <a href="https://ko-fi.com/cworld0" target="_blank">Ko-fi</a></p> */}
   <p>
     赞助后欢迎留言或联系我。我的邮箱是：（<code
       class='email-b64'
@@ -71,7 +68,7 @@ const headings = [
         }
       } catch (e) {}
     })
-  </script>
+  </script> */}
 </PageLayout>
 
 <style>
